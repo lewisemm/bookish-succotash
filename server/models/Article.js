@@ -44,4 +44,4 @@ ArticleSchema.methods.getUserArticle = function(_id) {
   });
 }
 
-module.exports('Article', ArticleSchema);
+module.exports = mongoose.model('Article', ArticleSchema);
