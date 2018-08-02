@@ -8,7 +8,7 @@ export default (state=defaultState, action) => {
     case 'TOGGLE_MODAL':
       return {
         ...defaultState,
-        modalMode:
+        modalMode: action.modalMode
       }
     default:
       return state;
