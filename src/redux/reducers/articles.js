@@ -3,7 +3,7 @@ const initialState = {
   article: {}
 }
 
-exports default(state=initialState, action) => {
+export default(state=initialState, action) => {
   switch(action.type) {
     case 'LOAD_ARTICLES':
       return {
