@@ -6,6 +6,7 @@ import Feed from './components/Feed';
 import Profile from './components/Header';
 import ArticleView from './components/ArticleView';
 import Editor from './components/Editor';
+import requireAuthentication from './utils/requireAuth';
 import SignInWith from './components/SignInWith';
 
 import logo from './logo.svg';
@@ -24,7 +25,7 @@ class App extends Component {
           <Route exact path='/' component={Feed}/>
           <Route exact path='/profile/:id' component={Profile}/>
           <Route exact path='/articleView/:id' component={ArticleView}/>
-          <Route exact path='/editor' component={Editor}/>
+          <Route exact path='/editor' component={requireAuthentication(Editor)}/>
           <Route exact path='**' component={Feed}/>
         </Switch>
       </div>

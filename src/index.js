@@ -7,6 +7,24 @@ import { ConnectedRouter } from 'react-router-redux';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { store, history } from './redux/store';
+import { getUser } from './redux/actions/actions';
+
+if (localStorage.Auth) {
+  store.dispatch({
+    type: 'SET_USER',
+    user: JSON.parse(localStorage.Auth)
+  });
+
+  var _id = JSON.parse(localStorage.Auth)._id;
+
+  getUser(_id).then((res) => {
+    store.dispatch({
+      type: 'SET_USER',
+      user: res
+    });
+  });
+
+}
 
 ReactDOM.render((
   <Provider store={store}>
@@ -16,4 +34,5 @@ ReactDOM.render((
       </Switch>
     </ConnectedRouter>
   </Provider>), document.getElementById('root'));
+
 registerServiceWorker();
