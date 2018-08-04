@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getArticles, clap, follow } from './../redux/actions/actions';
+import { getArticle, clap, follow } from './../redux/actions/actions';
 import { PropTypes } from 'prop-types';
-import { FollowButton } from './FollowButton';
+import FollowButton from './FollowButton';
 
 const mapStateToProps = state => {
   return {
@@ -18,7 +18,7 @@ class ArticleView extends Component {
   }
 
   componentWillMount() {
-    this.props.getArticles(this.props.match.params.id);
+    this.props.getArticle(this.props.match.params.id);
   }
 
   componentWillUnmount() {
@@ -189,7 +189,7 @@ ArticleView.propTypes = {
 }
 
 export default connect(mapStateToProps, {
-  getArticles,
+  getArticle,
   clap,
   follow
 })(ArticleView);
