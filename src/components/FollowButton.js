@@ -12,7 +12,7 @@ class FollowButton extends Component {
   followUser() {
     if (Object.keys(this.props._user).length > 0) {
       if (this.props._user._id != this.props.to_follow) {
-        if (this.props.user.indexOf(this.props.to_follow) ==== 1) {
+        if (this.props.user.indexOf(this.props.to_follow) === 1) {
           this.props.follow(this.prop._user._id, this.props.to_follow)
         }
       } 

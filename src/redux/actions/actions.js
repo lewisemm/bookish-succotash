@@ -71,19 +71,19 @@ export function SignInUser (user_data) {
     .then((res) => {
       let user = res.data;
       localStorage.setItem('Auth', JSON.stringify(user));
-      dispatch({type: SET_USER}, user);
+      dispatch({type: 'SET_USER'}, user);
     }).catch((err) => console.log(err));
   }
 }
 
 export function toggleClose () {
   return (dispatch) => {
-    dispatch({type: 'TOGGLE_MODAL'}, modalMode: false);
+    dispatch({type: 'TOGGLE_MODAL', modalMode: false});
   }
 }
 
 export function toggleOpen () {
   return (dispatch) => {
-    dispatch({type: 'TOGGLE_MODAL'}, modalMode: true);
+    dispatch({type: 'TOGGLE_MODAL', modalMode: true});
   }
 }

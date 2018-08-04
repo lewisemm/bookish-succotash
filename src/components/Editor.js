@@ -36,7 +36,7 @@ class Editor extends Component {
     formdata.append('description', this.state.description);
     formdata.append('claps', 0);
 
-    axios.post(`${url}article`, formdata).then((res) => {
+    axios.post(`${_url}article`, formdata).then((res) => {
       this.setState({
         loading: false
       });
@@ -127,7 +127,7 @@ class Editor extends Component {
   render() {
     return (
       <div>
-        <EditorHeader publish=(this.publishStory) loading={this.state.loading}/>
+        <EditorHeader publish={this.publishStory} loading={this.state.loading}/>
         <div className='container-fluid main-container'>
           <div className='row animated fadeInUp' data-animation='fadeInUp-fadeOutDown'>
             <div id='main-post' className='col-xs-10 col-md-8 col-md-offset-2 col-xs-offset-1 main-content'>
@@ -159,7 +159,7 @@ class Editor extends Component {
                   <textarea id='medium-editable' className='medium-editable'></textarea>
                 </div>
                 <div className='hidden'>
-                  <input type='file'onChange={() => this.previewImg()} id='file' ref=fileUploader/>
+                  <input type='file'onChange={() => this.previewImg()} id='file' ref='fileUploader'/>
                 </div>
               </form>
             </div>

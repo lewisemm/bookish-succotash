@@ -38,4 +38,4 @@ class EditorHeader extends Component {
   }
 }
 
-export default EditorHeader
+export default EditorHeader;

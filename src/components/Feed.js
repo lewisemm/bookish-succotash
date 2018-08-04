@@ -27,7 +27,7 @@ class Feed extends Component {
           <div className='post-info'>
             <div data-react-className='PopoverLink'>
               <span className='popover-link' data-reactroot=''>
-                <a href=`{`/profile/${article.author._id}`}`>{ article.author.name }</a>
+                <a href={`/profile/${article.author._id}`}>{ article.author.name }</a>
               </span>
             </div>
             <small>Posted * must read</small>
